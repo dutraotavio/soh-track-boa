@@ -9,7 +9,6 @@ public class Audio {
     private String titulo;
     private int totalDeReproducoes;
     private int totalDeCurtidas;
-    private double classificacao;
 
     public String getTitulo() {
         return titulo;
@@ -27,16 +26,16 @@ public class Audio {
         return totalDeCurtidas;
     }
 
-    public double getClassificacao() {
-        return classificacao;
+    public int getClassificacao() {
+        return 0;
     }
 
     public void curte() {
-        this.totalDeCurtidas = this.totalDeReproducoes / random.nextInt(10);
+        this.totalDeCurtidas = this.totalDeReproducoes / (random.nextInt(5) + 1);
     }
 
     public void reproduz() {
-        this.totalDeReproducoes = random.nextInt(1000);
+        this.totalDeReproducoes = random.nextInt(5000);
     }
 
 }
