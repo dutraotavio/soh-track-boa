@@ -6,16 +6,16 @@ public class Audio {
 
     Random random = new Random();
 
-    private String titulo;
+    private final String titulo;
     private int totalDeReproducoes;
     private int totalDeCurtidas;
 
-    public String getTitulo() {
-        return titulo;
+    public Audio(String titulo) {
+        this.titulo = titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public String getTitulo() {
+        return titulo;
     }
 
     public int getTotalDeReproducoes() {

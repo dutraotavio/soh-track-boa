@@ -1,21 +1,22 @@
 package com.dutradevs.modelos;
 
-public class Musica extends Audio {
+public class Musica extends Audio implements MostraInfo {
 
-    private String album;
-    private int lancamento;
-    private String artista;
+    private final String album;
+    private final int lancamento;
+    private final String artista;
 
-    public void setAlbum(String album) {
+    public Musica(String titulo, String album, int lancamento, String artista) {
+        super(titulo);
         this.album = album;
-    }
-
-    public void setLancamento(int lancamento) {
         this.lancamento = lancamento;
+        this.artista = artista;
     }
 
-    public void setArtista(String artista) {
-        this.artista = artista;
+    @Override
+    public void info() {
+        System.out.println(getTitulo() + " foi reproduzida " + getTotalDeReproducoes() +
+                " vezes e recebeu " + getCurtidas() + " curtidas");
     }
 
     @Override

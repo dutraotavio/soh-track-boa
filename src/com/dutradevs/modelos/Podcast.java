@@ -1,24 +1,27 @@
 package com.dutradevs.modelos;
 
-public class Podcast extends Audio {
+public class Podcast extends Audio implements MostraInfo {
 
-    private String apresentador;
-    private String descricao;
+    private final String apresentador;
+     private final String descricao;
+
+    public Podcast(String titulo, String apresentador, String descricao) {
+        super(titulo);
+        this.apresentador = apresentador;
+        this.descricao = descricao;
+    }
 
     public String getApresentador() {
         return apresentador;
-    }
-
-    public void setApresentador(String apresentador) {
-        this.apresentador = apresentador;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    @Override
+    public void info() {
+        System.out.println("Nome: " + getTitulo() + "\nApresentadores: " + getApresentador() + "\nDescrição: " + getDescricao() + "\n");
     }
 
     @Override
