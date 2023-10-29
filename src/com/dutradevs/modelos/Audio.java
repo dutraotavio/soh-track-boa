@@ -2,7 +2,7 @@ package com.dutradevs.modelos;
 
 import java.util.Random;
 
-public class Audio {
+public class Audio implements Comparable<Audio>{
 
     Random random = new Random();
 
@@ -38,4 +38,8 @@ public class Audio {
         this.totalDeReproducoes = random.nextInt(5000);
     }
 
+    @Override
+    public int compareTo(Audio audio) {
+        return this.getTitulo().compareTo(audio.getTitulo());
+    }
 }

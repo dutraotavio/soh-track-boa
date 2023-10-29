@@ -4,7 +4,10 @@ import com.dutradevs.modelos.Favoritos;
 import com.dutradevs.modelos.Musica;
 import com.dutradevs.modelos.Podcast;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,13 +16,17 @@ public class Main {
         Musica musica2 = new Musica("Céu Azul", "Música Popular Caiçara", 2012, "Charlie Brown Jr.");
         Musica musica3 = new Musica("Yellow", "Parachutes", 2000, "Coldplay");
 
-        LinkedList<Musica> listaMusica = new LinkedList<>();
+        List<Musica> listaMusica = new LinkedList<>();
 
         listaMusica.add(musica1);
         listaMusica.add(musica2);
         listaMusica.add(musica3);
 
-        System.out.println(listaMusica + "\n");
+        Collections.sort(listaMusica);
+        System.out.println("Ordenação por Título\n" + listaMusica + "\n");
+
+        listaMusica.sort(Comparator.comparing(Musica::getLancamento));
+        System.out.println("Ordenação por ano de lançamento\n" + listaMusica + "\n");
 
         musica1.reproduz();
         musica1.curte();
@@ -29,7 +36,6 @@ public class Main {
 
         musica3.reproduz();
         musica3.curte();
-
 
         musica1.info();
         musica2.info();

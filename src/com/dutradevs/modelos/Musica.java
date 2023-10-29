@@ -13,6 +13,10 @@ public class Musica extends Audio implements MostraInfo {
         this.artista = artista;
     }
 
+    public int getLancamento() {
+        return lancamento;
+    }
+
     @Override
     public void info() {
         System.out.println(getTitulo() + " foi reproduzida " + getTotalDeReproducoes() +
